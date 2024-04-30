@@ -8,7 +8,7 @@ export default function Register() {
     // destruct props "errors"
     const { errors } = usePage().props;
 
-    // state users
+    // state yang digunakan untuk menampung data
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -73,7 +73,7 @@ export default function Register() {
                                                 />
                                             </div>
                                             {errors.name && (
-                                                <div className="alert alert-danger">
+                                                <div className="alert alert-danger fs-8">
                                                     {errors.name}
                                                 </div>
                                             )}
@@ -158,8 +158,18 @@ export default function Register() {
                                             </div>
                                         </div>
                                     </div>
+
+                                    <button
+                                        className="btn btn-success shadow-sm rounded-sm px-4 w-100"
+                                        type="submit"
+                                    >
+                                        Registrasi
+                                    </button>
                                 </form>
                             </div>
+                        </div>
+                        <div className="register text-center mt-3">
+                            Sudah Punya Akun ? <Link href="/login">Login</Link>
                         </div>
                     </div>
                 </div>

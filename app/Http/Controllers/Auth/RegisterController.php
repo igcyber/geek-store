@@ -24,6 +24,10 @@ class RegisterController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
+        ], [
+            'name.required' => 'Nama Tidak Boleh Kosong',
+            'email.required' => 'E-mail Tidak Boleh Kosong',
+            'password.required' => 'Password Tidak Boleh Kosong'
         ]);
 
         //insert data user

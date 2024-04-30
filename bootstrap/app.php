@@ -22,6 +22,9 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \App\Http\Middleware\HandleInertiaRequests::class,
         ]);
+
+        //middleware configuration redirect after login
+        $middleware->redirectTo(guests: '/login', users: '/account/dashboard');
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
