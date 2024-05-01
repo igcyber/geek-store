@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Account\DashboardController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -31,3 +32,12 @@ Route::post('/login', [LoginController::class, 'store'])
 
 // Route logout process
 Route::post('/logout', LogoutController::class)->name('logout')->middleware('auth');
+
+// Route Account
+Route::prefix('account')->group(function () {
+    //middleware auth
+    Route::group(['middleware' => ['auth']], function () {
+        //route dashboard
+        Route::get('/dashboard', DashboardController::class)->name('account.dashboard');
+    });
+});
