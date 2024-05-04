@@ -49,7 +49,7 @@ class DashboardController extends Controller
             }
         }
 
-        //return view
+        //return data view as collection
         return inertia('Account/Dashboard/Index', [
             'count' => [
                 'unpaid' => $unpaid,

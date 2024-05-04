@@ -22,8 +22,8 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ], [
-            'email.required' => 'Alamat E-Mail Tidak Ditemukan',
-            'password.required' => 'Password Salah'
+            'email.required' => 'Alamat E-Mail Kosong!',
+            'password.required' => 'Password Kosong!'
         ]);
 
         //get email and password from request
@@ -40,7 +40,7 @@ class LoginController extends Controller
 
         //return if attempt failed
         return back()->withErrors([
-            'email' => 'Alamat E-mail Tidak Terdaftar'
+            'email' => 'Alamat E-mail / Password Salah',
         ]);
     }
 }
