@@ -105,7 +105,7 @@ export default function Sidebar() {
                         Hak Akses
                     </Link>
                 )}
-                {hasAnyPermission(["permissions.index"]) && (
+                {hasAnyPermission(["permission.index"]) && (
                     <Link
                         href="/account/permissions"
                         className={`${
